@@ -11,7 +11,7 @@ class ListAllUsersUseCase {
   execute({ user_id }: IRequest): User[] {
     const user = this.usersRepository.findById(user_id);
 
-    if (user.admin === false) {
+    if (!user || user?.admin === false) {
       throw new Error("Request was not made by an admin.");
     }
 
