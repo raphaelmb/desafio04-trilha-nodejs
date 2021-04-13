@@ -81,6 +81,9 @@
                                 }
                             }
                         }
+                    },
+                    "400": {
+                        "description": "User does not exits or is not an admin"
                     }
                 }
             }
