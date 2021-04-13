@@ -21,3 +21,4 @@ to get it started!
 
 
 Applying SOLID principles.
+Using Swagger for documentation.
