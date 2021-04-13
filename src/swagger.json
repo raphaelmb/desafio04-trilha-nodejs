@@ -85,7 +85,50 @@
                 }
             }
         },
-        "/users/:user_id/admin": {},
-        "/users/:user_id": {}
+        "/users/{user_id}": {
+            "get": {
+                "tags": ["User"],
+                "summary": "Lists one user",
+                "description": "Lists one specific user by id",
+                "parameters": [{
+                    "name": "user_id",
+                    "in": "path",
+                    "id": "user_id",
+                    "required": "true",
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "User found"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+
+        },
+        "/users/{user_id}/admin": {
+            "patch": {
+                "tags": ["User"],
+                "summary": "Turns user into an admin",
+                "description": "Changes user's 'admin' property to 'true'",
+                "parameters": [{
+                    "name": "user_id",
+                    "in": "path",
+                    "id": "user_id",
+                    "required": "true",
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "User is now an admin"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        }
     }
 }
