@@ -28,7 +28,7 @@ class UsersRepository implements IUsersRepository {
 
     this.users.push(user);
 
-    return user; // ??
+    return user;
   }
 
   findById(id: string): User | undefined {
@@ -49,10 +49,10 @@ class UsersRepository implements IUsersRepository {
     if (user) {
       user.admin = true;
       user.updated_at = new Date();
-      return user; // ??
+      return user;
     }
 
-    return user; // ??
+    return user;
   }
 
   list(): User[] {
